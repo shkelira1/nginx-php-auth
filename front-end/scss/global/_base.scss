@@ -1,0 +1,81 @@
+*{
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $ff-main;
+  font-size: 14px;
+  line-height: 1.2;
+
+  &.open-menu{
+    overflow: hidden;
+  }
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a{
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active
+  {
+    transition: $base-transition;
+  }
+}
+
+input{
+  &:focus,
+  &:active{
+    outline: none;
+  }
+}
+
+button{
+  &:focus,
+  &:active{
+    outline: none;
+  }
+}
+
+//.wrapper{
+//  overflow: hidden;
+//}
+
+//h2.title{
+//  font: 700 36px/1 $ff-main;
+//  text-transform: uppercase;
+//  @include mq('phone', max) {
+//    font-size: 28px;
+//  }
+//}
+
+main.main{
+  //margin-top: -20px;
+}
+
+button{
+  background-color: transparent;
+  border:none;
+}
+
+//h1.title{
+//   margin: 30px 0 25px;
+//   font: 700 36px/1 Ubuntu,sans-serif;
+//   color: #48a5f1;
+//   text-transform: uppercase;
+//   letter-spacing: 2px;
+//   @include mq('phone', max) {
+//     font-size: 28px;
+//     margin: 25px 0 20px;
+//   }
+// }

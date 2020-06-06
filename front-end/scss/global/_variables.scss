@@ -1,0 +1,45 @@
+// Colors
+$c-white: #fff;
+$c-gold: #FCA800;
+$c-gray: #878585;
+$c-black: #000;
+$c-light-blue: #ADD8E6;
+$c-dark-blue: #162542;
+
+// Fonts
+$ff-main: 'Roboto', sans-serif;
+
+
+// Path
+$path-img: '../img/design/';
+$path-fonts: '../fonts/';
+
+
+// Transition
+$base-transition: .3s ease;
+
+
+// Shadow
+$base-text-shadow: 0px 1px 6px rgba(1, 1, 1, 0.3);
+$base-box-shadow: 0px 2px 4.8px 0.2px rgba(0, 1, 0, 0.49);
+
+
+// Opacity
+$base-opacity-hover: .8;
+
+
+
+$breakpoints: (
+        "400":            400px,
+        "phone-small":    480px,
+        "500":            500px,
+        "600":            600px,
+        "phone":          768px,
+        "tablet":         992px,
+        "desktop-small":  1100px,
+        "desktop":        1200px,
+        "desktop-medium": 1300px,
+        "desktop-large":  1400px,
+        "1500":           1500px,
+        "1750":           1750px
+);

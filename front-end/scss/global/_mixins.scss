@@ -1,0 +1,130 @@
+// Centered mixin
+@mixin centerer-xy() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerer-x() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin centerer-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+// Triangle mixin
+@mixin triangle($width, $direction, $color){
+  width: 0;
+  height: 0;
+  @if $direction == up {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+  @if $direction == down {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $width solid $color;
+  }
+  @if $direction == left {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $width solid $color;
+  }
+  @if $direction == right {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
+  }
+}
+
+
+// Placeholder mixin
+@mixin placeholder($color, $size, $weight) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    //text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  &:-moz-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    //text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  &::-moz-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    //text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    //text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+// Clearfix mixin
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin pseudo-element($content: '', $display: block, $pos: absolute){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Media query mixin
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+
+@mixin font-open-sans($size: false, $color: false, $weight: false,  $lh: false) {
+  font-family: 'Open Sans', sans-serif;
+  @if $size { font-size: $size; }
+  @if $color { color: $color; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin link ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}

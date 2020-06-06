@@ -1,0 +1,15 @@
+//base (global)
+@import "global/reset";
+@import "global/variables";
+@import "global/mixins";
+@import "global/base";
+@import "global/ge_icon";
+
+//Section
+@import "section/first";
+@import "section/home";
+@import "section/cabinet";
+@import "section/admin";
+@import "section/users";
+@import "section/user_change";
+@import "section/user_otp";

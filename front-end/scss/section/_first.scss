@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 120px;
+  width: 100%;
+  @include mq('desktop', max) {
+    padding: 0 60px;
+  }
+  @include mq('phone-small', max) {
+    padding: 0 30px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  //height: 100%;
+}
+
+
+.site {
+  height: 100%;
+  min-height: 100vh;
+  background: url('/img/main-bg.jpg') no-repeat center;
+  background-size: cover;
+  transition: 0.4s;
+
+  &:before {
+    content: '';
+    display: block;
+    @include centerer-xy;
+    width: 100%;
+    height: 100%;
+    background: $c-black;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  &.otp {
+    background: url("/img/auth-bg.png") no-repeat center !important;
+    background-size: cover !important;
+    transition: 0.4s;
+  }
+
+  &.otp-new {
+    background: url("/img/auth-bg.png") no-repeat center;
+    background-size: cover;
+  }
+
+  &.google {
+    background: url("/img/google-bg.jpg") no-repeat center !important;
+    background-size: cover !important;;
+    transition: 0.4s;
+  }
+
+  &.google-new {
+    background: url("/img/ip-bg.png") no-repeat center;
+    background-size: cover;
+  }
+
+  &.telegram {
+    background: url("/img/telegram-bg.png") no-repeat center !important;
+    background-size: cover !important;;
+    transition: 0.4s;
+  }
+
+  &.telegram-new {
+    background: url("/img/telegram-bg.png") no-repeat center;
+    background-size: cover;
+  }
+
+  &.ip {
+    background: url("/img/ip-bg.png") no-repeat center !important;
+    background-size: cover !important;;
+    transition: 0.4s;
+  }
+
+  &.ip-new {
+    background: url("/img/ip-bg.png") no-repeat center;
+    background-size: cover;
+  }
+
+  &__inner {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    z-index: 1;
+    order: 1;
+
+    &-text {
+      font: 700 64px/1 $ff-main;
+      color: $c-light-blue;
+
+    }
+  }
+}
+
+.login-providers-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+
+  &-data {
+    margin: 13px 0;
+
+    & a {
+      font: 400 16px/1 $ff-main;
+      color: $c-black;
+      outline: none;
+      width: 205px;
+    }
+  }
+
+  & .active {
+    a {
+      font: 400 12px/1 $ff-main;
+
+    }
+  }
+}
+
+hr {
+  display: none;
+}
+
+.error {
+  order: 4;
+  font: 400 12px/1 $ff-main;
+  color: $c-light-blue;
+  z-index: 1;
+}
+
+footer {
+  z-index: 1;
+  text-align: right;
+  font: 400 14px/1 $ff-main;
+  color: $c-light-blue;
+  padding-bottom: 20px;
+  order: 15;
+}
+
+.hbtn {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 20px;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 0;
+  color: $c-black;
+  cursor: pointer;
+  outline: none;
+}
+
+.hb-fill-top-rev::before {
+  position: absolute;
+  content: "";
+  background: $c-light-blue;
+  transition-duration: 0.3s;
+  z-index: -1;
+  top: auto;
+  right: auto;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+
+.hb-fill-top-rev:hover::before {
+  width: 100%;
+  height: 0px;
+  opacity: 1;
+}
+
+
+.hb-fill-top-rev:hover {
+  background: transparent;
+  color: $c-light-blue;
+  transition: color 0.3s ease 0s, background 0s ease 0s;
+}
+
+.login-provider {
+  &-form {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    order: 3;
+
+    &__inner {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        width: 250px;
+        margin-bottom: 15px;
+        font: 400 14px/1 $ff-main;
+        color: $c-black;
+      }
+
+      input::placeholder {
+        font: 400 14px/1 $ff-main;
+        color: $c-black;
+      }
+
+      & .hbtn {
+        width: 205px;
+      }
+
+      &-ip {
+        font: 400 16px/1 $ff-main;
+        color: $c-light-blue;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &-head {
+    font: 400 24px/1 $ff-main;
+    color: $c-light-blue;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}

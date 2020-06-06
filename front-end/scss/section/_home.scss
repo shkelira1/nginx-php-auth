@@ -1,0 +1,69 @@
+.breadcrumbs {
+  order: 2;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.account {
+  &-name {
+    z-index: 1;
+    font: 600 24px/1 $ff-main;
+    color: $c-light-blue;
+  }
+
+  &-actions {
+    z-index: 1;
+
+    &_data {
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & li {
+        &:first-child {
+          margin-right: 15px;
+        }
+
+        & a {
+          font: 400 16px/1 $ff-main;
+          color: $c-black;
+        }
+      }
+    }
+
+    &_sites {
+      order: 3;
+      z-index: 1;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+
+      &_title {
+        font: 600 24px/1 $ff-main;
+        color: $c-light-blue;
+        margin-bottom: 15px;
+      }
+
+      &_link {
+        display: flex;
+        flex-direction: column;
+
+        & .hbtn {
+          font: 400 16px/1 $ff-main;
+          width: 171px;
+        }
+
+        &-data {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
